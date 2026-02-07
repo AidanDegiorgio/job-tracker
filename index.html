@@ -10,32 +10,80 @@
 
 <!-- header -->
     <header>
+    <!-- title -->
         <h1 id="title">Job Application Tracker</h1>
 
-        <nav>
-            <h3 id="heading">Add Application</h3>
+    <!-- add section -->
+        <nav id="flex-divs">
+            <h3 class="heading">Add Application</h3>
 
-            <input type="text" placeholder="Company Name">
-            <input type="text" placeholder="Position">
-
-            <label for="status">Status</label>
-            <select name="status" id="status" placeholder="Status">
-                <option value="any"></option>
-                <option value="applied">Applied</option>
-                <option value="interview">Interview</option>
-                <option value="offer">Offer</option>
-                <option value="rejected">Rejected</option>
-            </select>
-            <button>Add Application</button>
-
-            <textarea name="" id="" placeholder="Notes..."></textarea>
+            <section class="nav-sec">
+                
+                <div class="nav-divs">
+                    <input type="text" placeholder="Company Name">
+                </div>
+                <div class="nav-divs">
+                    <input type="text" placeholder="Position">
+                </div>
+                <div class="nav-divs">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" placeholder="Status">
+                        <option value="any"></option>
+                        <option value="applied">Applied</option>
+                        <option value="interview">Interview</option>
+                        <option value="offer">Offer</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="nav-divs">
+                    <button>Add Application</button>
+                </div>
+                <div class="nav-divs">
+                    <textarea cols="10" name="notes" id="notes" placeholder="Notes..."></textarea>
+                </div>
+            </section>
         </nav>
     </header>
 
 <!-- main -->
     <main>
-        
+    <!-- filter section -->
+        <Section id="flex-divs">
+            <h3 class="heading">Filter Applications</h3>
+            <section class="containers">
+                <label for="filter-all" class="class-filter-all">All</label>
+                <input type="radio" name="filter" id="filter-all" class="class-filter-all">
 
+                <label for="filter-applied" class="class-filter-applied">Applied</label>
+                <input type="radio" name="filter" id="filter-applied" class="class-filter-applied">
+
+                <label for="filter-interview" class="class-filter-interview">Interview</label>
+                <input type="radio" name="filter" id="filter-interview" class="class-filter-interview">
+
+                <label for="filter-offer" class="class-filter-offer">Offer</label>
+                <input type="radio" name="filter" id="filter-offer" class="class-filter-offer">
+
+                <label for="filter-rejected" class="class-filter-rejected">Rejected</label>
+                <input type="radio" name="filter" id="filter-rejected" class="class-filter-rejected">
+            </section>
+        </Section>
+    <!-- list section   -->
+        <section id="flex-divs">
+            <h3 class="heading">Applications List</h3>
+            <section id="list-container" class="containers">
+
+            <!-- demo application -->
+                <section id="test-app">
+                    <h4>Company Name</h4>
+                    <p>position applied</p>
+                    <h4>status</h4>
+                    <p>Applied on: *date*</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </section>
+
+            </section>
+        </section>
     </main>
 
     <script src="script.js"></script>
