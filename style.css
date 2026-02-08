@@ -1,48 +1,139 @@
+/* RESET */
 * {
-    background-color: aquamarine;
-    margin: 0%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* PAGE */
+body {
+    background-color: #A6B1E1;
+    padding-bottom: 40px;
+}
+
+:root {
+    --field-height: 40px;
+}
+
+/* TITLE */
 #title {
-    background: skyblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #424874;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* SECTION HEADINGS */
+.heading {
+    margin-bottom: 10px;
+    color: #424874;
+}
+
+/* ADD APPLICATION CONTAINER */
+#nav-container {
+    background: #dcd6f7;
+    margin: 30px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 20px;
+}
+
+/* FORM SECTION */
+
+.nav-sec {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border: solid skyblue;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    margin: 0%;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
 }
 
-.heading{
-    background-color: brown;
-}
-
-#flex-divs {
+/* FORM ITEMS */
+.nav-divs {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.nav-sec {
-    display: flex;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.nav-sec {
-    border: 1px solid blue;
-    padding: 1%;
-    width: 90%;
-}
-
-.nav-divs {
-    background: black;
     width: 200px;
 }
 
+/* INPUTS & TEXTAREA */
+input, select, textarea {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    background: white;
+}
 
+input, select {
+    height: var(--field-height);
+    padding: 0 12px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+#nav-div5 {
+    width: 100%;
+}
+
+.status-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.status-row select {
+    order: 1;
+    width: 160px;
+}
+
+select:has(option[value=""]:checked) {
+    color: #aaa;
+}
+
+/* BUTTON */
+button {
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: #424874;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.status-row button {
+    height: var(--field-height);
+    padding: 0 16px;
+    min-width: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    order: 2;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* FILTER + LIST SECTIONS */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.containers {
+    background: #dcd6f7;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}

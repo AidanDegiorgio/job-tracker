@@ -14,7 +14,7 @@
         <h1 id="title">Job Application Tracker</h1>
 
     <!-- add section -->
-        <nav id="flex-divs">
+        <nav class="flex-divs" id="nav-container">
             <h3 class="heading">Add Application</h3>
 
             <section class="nav-sec">
@@ -22,25 +22,29 @@
                 <div class="nav-divs">
                     <input type="text" placeholder="Company Name">
                 </div>
+
                 <div class="nav-divs">
                     <input type="text" placeholder="Position">
                 </div>
-                <div class="nav-divs">
-                    <label for="status">Status</label>
-                    <select name="status" id="status" placeholder="Status">
-                        <option value="any"></option>
-                        <option value="applied">Applied</option>
-                        <option value="interview">Interview</option>
-                        <option value="offer">Offer</option>
-                        <option value="rejected">Rejected</option>
-                    </select>
+
+                <div class="nav-divs status-row">
+                    <div class="status-field">
+                        <select name="status" id="status" required>
+                            <option value="" disabled selected hidden>Status</option>
+                            <option value="applied">Applied</option>
+                            <option value="interview">Interview</option>
+                            <option value="offer">Offer</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    
+                    <button>Add Application</button>   
                 </div>
-                <div class="nav-divs">
-                    <button>Add Application</button>
-                </div>
+                
                 <div class="nav-divs" id="nav-div5">
                     <textarea cols="10" name="notes" id="notes" placeholder="Notes..."></textarea>
                 </div>
+
             </section>
         </nav>
     </header>
@@ -48,7 +52,7 @@
 <!-- main -->
     <main>
     <!-- filter section -->
-        <Section id="flex-divs">
+        <Section class="flex-divs">
             <h3 class="heading">Filter Applications</h3>
             <section class="containers">
                 <label for="filter-all" class="class-filter-all">All</label>
