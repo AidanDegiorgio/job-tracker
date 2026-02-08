@@ -52,38 +52,63 @@
 <!-- main -->
     <main>
     <!-- filter section -->
-        <Section class="flex-divs">
+        <Section class="section-card">
             <h3 class="heading">Filter Applications</h3>
             <section class="containers">
-                <label for="filter-all" class="class-filter-all">All</label>
-                <input type="radio" name="filter" id="filter-all" class="class-filter-all">
+                
+                <section class="filter-grid">
 
-                <label for="filter-applied" class="class-filter-applied">Applied</label>
-                <input type="radio" name="filter" id="filter-applied" class="class-filter-applied">
+                    <label class="filter-option">
+                        <input type="radio" name="filter" checked>
+                        <span>All</span>
+                    </label>
 
-                <label for="filter-interview" class="class-filter-interview">Interview</label>
-                <input type="radio" name="filter" id="filter-interview" class="class-filter-interview">
+                    <label class="filter-option">
+                        <input type="radio" name="filter">
+                        <span>Applied</span>
+                    </label>
 
-                <label for="filter-offer" class="class-filter-offer">Offer</label>
-                <input type="radio" name="filter" id="filter-offer" class="class-filter-offer">
+                    <label class="filter-option">
+                        <input type="radio" name="filter">
+                        <span>Interview</span>
+                    </label>
 
-                <label for="filter-rejected" class="class-filter-rejected">Rejected</label>
-                <input type="radio" name="filter" id="filter-rejected" class="class-filter-rejected">
+                    <label class="filter-option">
+                        <input type="radio" name="filter">
+                        <span>Offer</span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input type="radio" name="filter">
+                        <span>Rejected</span>
+                    </label>
+
+                </section>
+                
             </section>
         </Section>
+
     <!-- list section   -->
-        <section id="flex-divs">
+        <section class="section-card">
             <h3 class="heading">Applications List</h3>
             <section id="list-container" class="containers">
 
             <!-- demo application -->
-                <section id="test-app">
-                    <h4>Company Name</h4>
-                    <p>position applied</p>
-                    <h4>status</h4>
-                    <p>Applied on: *date*</p>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                <section class="app-card">
+                    <div class="app-top">
+                        <h4 class="company">Company Name</h4>
+                        <p class="position">position applied</p>
+                    </div>
+
+                    <div class="app-middle">
+                        <span class="status-badge applied">Status</span>
+                        <span class="date">Applied on: *date*</span>
+                    </div>
+                    
+                    <div class="app-actions">
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
                 </section>
 
             </section>

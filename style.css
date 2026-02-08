@@ -22,8 +22,14 @@ body {
     color: white;
     text-align: center;
     padding: 15px;
+
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* SECTION HEADINGS */
@@ -136,4 +142,119 @@ main {
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 20px;
+}
+
+.section-card {
+    background: #dcd6f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+/* FILTER APPLICATIONS SECTION */
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.filter-option {
+    background: white;
+    border-radius: 12px;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.filter-option input {
+    display: none;
+}
+
+.filter-option span {
+    font-size: 14px;
+    color: #424874;
+}
+
+.filter-option input:checked + span {
+    font-weight: bold;
+}
+
+.filter-option:has(input:checked) {
+    border-color: #424874;
+    background: #f5f3ff;
+}
+
+/* APPLICATIONS LIST SECTION */
+.app-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+/* -----------TOP ROW */
+.app-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.company {
+    font-weight: bold;
+}
+
+.position {
+    text-align: right;
+}
+
+/* -----------MIDDLE ROW */
+.app-middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: white;
+    width: fit-content;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.date {
+    text-align: right;
+}
+
+/* -----------BUTTONS ROW */
+.app-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.button {
+    padding: 8px 16px;
+    width: 80px;
+    font-weight: bold;
+}
+
+/* STATUS BADGE */
+.status-badge.applied {
+    background-color: #3b82f6;
+}
+
+.status-badge.interview {
+    background-color: #f59e0b;
+}
+
+.status-badge.offer {
+    background-color: #22c55e;
+}
+
+.status-badge.rejected {
+    background-color: #ef4444;
 }
