@@ -17,19 +17,19 @@
         <nav class="flex-divs" id="nav-container">
             <h3 class="heading">Add Application</h3>
 
-            <section class="nav-sec">
+            <form class="nav-sec" id="applicationForm">
                 
                 <div class="nav-divs">
-                    <input type="text" placeholder="Company Name">
+                    <input type="text" id="companyInput" placeholder="Company Name">
                 </div>
 
                 <div class="nav-divs">
-                    <input type="text" placeholder="Position">
+                    <input type="text" id="positionInput" placeholder="Position">
                 </div>
 
                 <div class="nav-divs status-row">
                     <div class="status-field">
-                        <select name="status" id="status" required>
+                        <select name="status" id="statusInput" required>
                             <option value="" disabled selected hidden>Status</option>
                             <option value="applied">Applied</option>
                             <option value="interview">Interview</option>
@@ -38,14 +38,14 @@
                         </select>
                     </div>
                     
-                    <button>Add Application</button>   
+                    <button id="addBtn">Add Application</button>
                 </div>
                 
                 <div class="nav-divs" id="nav-div5">
-                    <textarea cols="10" name="notes" id="notes" placeholder="Notes..."></textarea>
+                    <textarea cols="10" name="notes" id="notesInput" placeholder="Notes..."></textarea>
                 </div>
 
-            </section>
+            </form>
         </nav>
     </header>
 
@@ -59,27 +59,27 @@
                 <section class="filter-grid">
 
                     <label class="filter-option">
-                        <input type="radio" name="filter" checked>
+                        <input type="radio" name="filter" value="all" checked>
                         <span>All</span>
                     </label>
 
                     <label class="filter-option">
-                        <input type="radio" name="filter">
+                        <input type="radio" name="filter" value="applied">
                         <span>Applied</span>
                     </label>
 
                     <label class="filter-option">
-                        <input type="radio" name="filter">
+                        <input type="radio" name="filter" value="interview">
                         <span>Interview</span>
                     </label>
 
                     <label class="filter-option">
-                        <input type="radio" name="filter">
+                        <input type="radio" name="filter" value="offer">
                         <span>Offer</span>
                     </label>
 
                     <label class="filter-option">
-                        <input type="radio" name="filter">
+                        <input type="radio" name="filter" value="rejected">
                         <span>Rejected</span>
                     </label>
 
@@ -94,7 +94,7 @@
             <section id="list-container" class="containers">
 
             <!-- demo application -->
-                <section class="app-card">
+                <!-- <section class="app-card">
                     <div class="app-top">
                         <h4 class="company">Company Name</h4>
                         <p class="position">position applied</p>
@@ -103,13 +103,14 @@
                     <div class="app-middle">
                         <span class="status-badge applied">Status</span>
                         <span class="date">Applied on: *date*</span>
+                        <span class="notes">Notes***</span>
                     </div>
                     
                     <div class="app-actions">
                         <button class="button">Edit</button>
                         <button class="button">Delete</button>
                     </div>
-                </section>
+                </section> -->
 
             </section>
         </section>
