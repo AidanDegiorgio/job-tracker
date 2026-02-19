@@ -8,8 +8,18 @@ const listContainer = document.getElementById("list-container");
 const form = document.getElementById("applicationForm");
 const filterButtons = document.querySelectorAll('input[name="filter"]')
 
+// Dialog Box elements
+const editDialog = document.getElementById("editDialog");
+const editForm = document.getElementById("editForm");
+const editCompany = document.getElementById("editCompany");
+const editPosition = document.getElementById("editPosition");
+const editStatus = document.getElementById("editStatus");
+const editNotes = document.getElementById("editNotes");
+const cancelEdit = document.getElementById("cancelEdit");
+
 let applications = [];
 let currentFilter = "all";
+let editingId = null;
 
 loadFromLocalStorage();
 
@@ -48,7 +58,7 @@ function renderApplications() {
             ${app.notes ?`<div class="app-notes">${app.notes}</div>` : ""}
             
             <div class="app-actions">
-                <button class="button">Edit</button>
+                <button class="button edit-btn" data-id=${app.id}>Edit</button>
                 <button class="button delete-btn" data-id=${app.id}>Delete</button>
             </div>
         `;
@@ -84,7 +94,7 @@ addBtn.addEventListener("click", function (e) {
     form.reset();
 });
 
-// Event listener for "Delete" button
+// Event listener for "Edit" "Delete" buttons
 listContainer.addEventListener("click", function(e) {  //listener on listContainer and not delete-btn because delete-btn does not exist on page load
     if (e.target.classList.contains("delete-btn")) {
 
@@ -97,7 +107,44 @@ listContainer.addEventListener("click", function(e) {  //listener on listContain
         saveToLocalStorage(); //update LocalStorage
         renderApplications();
     }
+
+    if (e.target.classList.contains("edit-btn")) {
+
+        const id = Number(e.target.getAttribute("data-id"));
+        const appToEdit = applications.find(app => app.id === id);
+
+        editingId = id;
+
+        editCompany.value = appToEdit.company || "";
+        editPosition.value = appToEdit.position || "";
+        editStatus.value = appToEdit.status || "applied";
+        editNotes.value = appToEdit.notes || "";
+
+        editDialog.showModal();
+    }
 });
+
+// Event listener to edit local storage values
+editForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const appIndex = applications.findIndex(app => app.id === editingId);
+
+    applications[appIndex].company = editCompany.value.trim();
+    applications[appIndex].position = editPosition.value.trim();
+    applications[appIndex].status = editStatus.value;
+    applications[appIndex].notes = editNotes.value.trim();
+
+    saveToLocalStorage();
+    renderApplications();
+
+    editDialog.close();
+});
+
+// Event listener for cancel button in dialog box
+cancelEdit.addEventListener("click", function() {
+    editDialog.close();
+})
 
 // Show Filtered/non-Filtered "applications list"
 filterButtons.forEach(function (radio) {

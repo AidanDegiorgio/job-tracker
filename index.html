@@ -114,6 +114,28 @@
 
             </section>
         </section>
+
+    <!-- dialog box -->
+        <dialog id="editDialog">
+            <form id="editForm">
+
+                <h3>Edit Application</h3>
+                <input type="text" id="editCompany" placeholder="Company Name">
+                <input type="text" id="editPosition" placeholder="Position">
+                <select id="editStatus">
+                    <option value="applied">Applied</option>
+                    <option value="interview">Interview</option>
+                    <option value="offer">Offer</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <textarea id="editNotes" placeholder="Notes..."></textarea>
+                <div class="dialog-buttons">
+                    <button class="dialog-button" type="submit" id="acceptChanges">Accept Changes</button>
+                    <button class="dialog-button" type="button" id="cancelEdit">Cancel</button>
+                </div>
+
+            </form>
+        </dialog>
     </main>
 
     <script src="script.js"></script>
